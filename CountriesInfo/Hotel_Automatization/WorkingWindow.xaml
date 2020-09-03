@@ -1,0 +1,38 @@
+﻿<Window x:Class="Hotel_Automatization.WorkingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_Automatization"
+        mc:Ignorable="d"
+        Title="WorkingWindow" Height="455" Width="800"  Closing="DisposeDb">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MainCommands.SendRequest" Executed="SendRequest"/>
+        <CommandBinding Command="local:MainCommands.ShowAllInfo" Executed="ShowData"/>
+    </Window.CommandBindings>
+
+    <StackPanel>
+        <ToolBar Height="35">
+            <TextBox x:Name="Param" Text="USA" Margin="10,3" FontSize="12"
+                                 GotFocus="ClearOldParam" Width="113" HorizontalContentAlignment="Center"></TextBox>
+
+            <Separator></Separator>
+
+            <Button x:Name="ClientBtn" Content="Поиск" Command="local:MainCommands.SendRequest"
+                                Margin="10,3" Width="100" Background="AntiqueWhite" VerticalContentAlignment="Center"></Button>
+
+            <Button Content="Доступные страны" Command="local:MainCommands.ShowAllInfo"
+                                Margin="10,3" Width="120" Background="AntiqueWhite" VerticalContentAlignment="Center"></Button>
+        </ToolBar>
+
+        <DataGrid Name="MainDg" Height="280" Margin="5,10">
+            
+        </DataGrid>
+        
+        <StatusBar Margin="0,60" Height="28">
+            <TextBlock Height="26" TextAlignment="Center" FontSize="15">Состояние приложения:</TextBlock>
+            <TextBlock Name="InfoTxblc" Height="26" TextAlignment="Center" FontSize="15" Margin="20,0">Готово к работе!</TextBlock>
+        </StatusBar>
+    </StackPanel>
+</Window>
