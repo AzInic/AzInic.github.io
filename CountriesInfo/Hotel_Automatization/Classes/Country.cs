@@ -10,7 +10,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Hotel_Automatization.Classes
 {
-    //генерация классов необходимых для работы
+    //генерация классов необходимых для работ
     //тут: https://app.quicktype.io/#l=cs&r=json2csharp
     public class Country
     {
